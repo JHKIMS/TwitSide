@@ -1,6 +1,13 @@
+import AppLayout from "../components/AppLayout";
+
 const signUp = () => {
-    return(
-        <div>로그인창</div>
-    )
-}
+  return (
+    <>
+      <Head>
+        <title>회원가입 | TwitHoon</title>
+      </Head>
+      <AppLayout>회원가입 페이지</AppLayout>
+    </>
+  );
+};
 export default signUp;
