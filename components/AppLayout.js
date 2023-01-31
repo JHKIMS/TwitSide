@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import Link from "next/link";
-import { Menu } from "antd";
+import { Menu, Input, Row, Col } from "antd";
 
 const AppLayout = ({ children }) => {
   return (
@@ -8,21 +8,34 @@ const AppLayout = ({ children }) => {
       <Menu mode="horizontal">
         <Menu.Item>
           <Link href="/">
-            <a>노드버드</a>
+            노드버드
           </Link>
         </Menu.Item>
         <Menu.Item>
           <Link href="/profile">
-            <a>프로필</a>
+            프로필
           </Link>
         </Menu.Item>
         <Menu.Item>
+            <Input.Search enterButton style={{verticalAlign: 'middle'}} />
+        </Menu.Item>
+        <Menu.Item>
           <Link href="/signup">
-            <a>회원가입</a>
+            회원가입
           </Link>
         </Menu.Item>
       </Menu>
-      {children}
+      <Row gutter={8}>
+        <Col xs={24} md={6}>
+          왼쪽 메뉴
+        </Col>
+        <Col xs={24} md={12}>
+          {children}
+        </Col>
+        <Col xs={24} md={6}>
+          <a href="https://velog.io/" target="_blank" rel="noreferrer noopener">Velog</a>
+        </Col>
+      </Row>
     </div>
   );
 };
