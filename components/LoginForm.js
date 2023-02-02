@@ -18,7 +18,7 @@ const LoginForm = () => {
   const [password, onChangePassword] = useInput("");
 
   const onSubmitForm = useCallback(() => {
-    console.log(id,password);
+    console.log("아이디,비번",id,password);
     dispatch(loginAction({id, password}));
   }, [id,password]);
   return (
