@@ -10,9 +10,13 @@
   "license": "ISC",
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
+    "@reduxjs/toolkit": "^1.9.2",
     "antd": "^4.24.7",
     "next": "^11.1.4",
+    "next-redux-wrapper": "^8.1.0",
     "prop-types": "^15.8.1",
+    "react-redux": "^8.0.5",
+    "redux": "^4.2.1",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
