@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import Link from "next/link";
-import { useState,useCallback } from "react";
+import React,{ useState } from "react";
 import { Menu, Input, Row, Col } from "antd";
 import styled from 'styled-components';
-import UserProfile from "./UserProfile";
 import LoginForm from "./LoginForm";
+import UserProfile from "./UserProfile";
 
 const SearchInput = styled(Input.Search)`
   vertical-align: middle;

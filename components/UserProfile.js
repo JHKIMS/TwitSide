@@ -1,4 +1,5 @@
 import { Card, Avatar, Button } from "antd";
+import React from 'react';
 import { useCallback } from "react";
 
 const UserProfile = ({ setIsLoggedIn }) => {

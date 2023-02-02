@@ -1,5 +1,6 @@
 import Head from "next/head";
 import AppLayout from "../components/AppLayout";
+import React from 'react';
 
 const profile = () => {
   return (

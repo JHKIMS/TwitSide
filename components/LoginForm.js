@@ -1,5 +1,6 @@
 import { Form, Input, Button } from "antd";
 import { useState,useCallback } from "react";
+import React from 'react';
 import Link from "next/link";
 import styled from 'styled-components'
 
@@ -35,7 +36,7 @@ const LoginForm = ({setIsLoggedIn}) => {
         <br />
         <Input
           name="user-password"
-          type="_password"
+          type="password"
           value={password}
           onChange={onChangePassword}
           required
