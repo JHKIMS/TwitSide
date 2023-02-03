@@ -15,7 +15,8 @@ export const originState = {
         },
         {
           src: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DL2L_ZtOzYsY&psig=AOvVaw0WinH3DGMQm1aRDlVYTsD_&ust=1675427278314000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNDLg5Dr9vwCFQAAAAAdAAAAABB2",
-        },],
+        },
+      ],
       Comments: [
         {
           User: {
