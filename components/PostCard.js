@@ -6,22 +6,23 @@ import {
   HeartTwoTone,
 } from "@ant-design/icons";
 import PropTypes from "prop-types";
-import { Card, Popover, Button, Avatar } from "antd";
+import { Card, Popover, Button, Avatar, List, Comment } from "antd";
 import React, { useState, useCallback } from "react";
 import { useSelector } from "react-redux";
 import PostIamges from "./PostImages";
+import CommentForm from "./CommentForm";
 
 const PostCard = ({ post }) => {
   const [liked, setLiked] = useState(false);
   const [commentFormOpened, setCommentFormOpened] = useState(false);
   const me = useSelector((state) => state.user.me);
   const id = me?.id;
-  const onToggleLike = useCallback(()=>{
+  const onToggleLike = useCallback(() => {
     setLiked((prev) => !prev);
-  },[])
-  const onToggleComment = useCallback(() =>{
+  }, []);
+  const onToggleComment = useCallback(() => {
     setCommentFormOpened((prev) => !prev);
-  })
+  });
   return (
     <div style={{ marginBottom: 20 }}>
       <Card
@@ -29,9 +30,15 @@ const PostCard = ({ post }) => {
         cover={post.Images[0] && <PostIamges images={post.Images} />}
         actions={[
           <RetweetOutlined key="retweet" />,
-          liked
-            ? <HeartTwoTone twoToneColor="#eb2f96" key="heart" onClick={onToggleLike} />
-            : <HeartOutlined key="heart" onClick={onToggleLike}/>,
+          liked ? (
+            <HeartTwoTone
+              twoToneColor="#eb2f96"
+              key="heart"
+              onClick={onToggleLike}
+            />
+          ) : (
+            <HeartOutlined key="heart" onClick={onToggleLike} />
+          ),
           <MessageOutlined key="comment" onClick={onToggleComment} />,
           <Popover
             key="more"
@@ -60,7 +67,21 @@ const PostCard = ({ post }) => {
       </Card>
       {commentFormOpened && (
         <div>
-            댓글창
+          <CommentForm post={post}/>
+          <List
+            header={`${post.Comments.length}개의 댓글`}
+            itemLayout="horizontal"
+            dataSource={post.Comments}
+            renderItem={(item) => (
+              <li>
+                <Comment
+                    author={item.User.nickname}
+                    avatar={<Avatar>{item.User.nickname[0]}</Avatar>}
+                    content = {item.content}
+                />
+              </li>
+            )}
+          />
         </div>
       )}
     </div>
