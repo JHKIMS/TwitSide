@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import Slick from 'react-slick';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 const Overlay = styled.div`
     position: fixed;
@@ -45,11 +45,23 @@ export const ImgWrapper = styled.div`
         max-height: 750px;
     }
 `
+const Global = createGlobalStyle`
+    .slick-slide{
+        display: inline-block;
+    }
+
+    // antd 최신버전 사용할 시 생기는 오류 해결해줌.
+    .ant-card-cover {
+        transform: none !important;
+    }
+`
+
 const ImagesZoom =  ({images, onClose}) =>{
     const [currentSlide, setCurrentSlide] = useState(0);
     return (
         <>
         <Overlay>
+            <Global />
             <Header>
                 <h1>상세 이미지</h1>
                 <button onClick={onClose}>X</button>
