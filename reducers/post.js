@@ -5,7 +5,7 @@ export const originState = {
       id: 1,
       nickname: 'random',
     },
-    content: '첫 번째 게시글',
+    content: '첫 번째 게시글 #해시테스트1',
     Images: [{
       src: 'https://bookthumb-phinf.pstatic.net/cover/137/995/13799585.jpg?udate=20180726',
     }, {
@@ -36,7 +36,7 @@ export const addPost = {
 
 const dummyPost ={
     id: 2,
-    content: '더미데이터입니다.',
+    content: '더미데이터입니다. #해시테스트2',
     User:{
         id: 1,
         nickname: 'Bird'
