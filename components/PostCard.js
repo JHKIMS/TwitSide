@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 import { Card, Popover, Button, Avatar, List, Comment } from "antd";
 import React, { useState, useCallback } from "react";
 import { useSelector } from "react-redux";
-import PostIamges from "./PostImages";
+import PostImages from "./PostImages";
 import CommentForm from "./CommentForm";
 
 const PostCard = ({ post }) => {
@@ -27,7 +27,7 @@ const PostCard = ({ post }) => {
     <div style={{ marginBottom: 20 }}>
       <Card
         // cover : image, action : button
-        cover={post.Images[0] && <PostIamges images={post.Images} />}
+        cover={post.Images[0] && <PostImages images={post.Images} />}
         actions={[
           <RetweetOutlined key="retweet" />,
           liked ? (
